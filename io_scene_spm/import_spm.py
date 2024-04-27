@@ -56,7 +56,7 @@ def create_material(tex_fname_1, tex_fname_2, tex_name_1, tex_name_2):
 
         uvmap_node = nodes.new(type="ShaderNodeUVMap")
         uvmap_node.location = x - 500, y - 300
-        uvmap_node.uv_map = "UVMap"  # first UV map for first texture
+        uvmap_node.uv_map = "Float2"  # first UV map for first texture
         links.new(uvmap_node.outputs[0], tex1_node.inputs["Vector"])
 
         if tex_fname_2:
@@ -76,7 +76,7 @@ def create_material(tex_fname_1, tex_fname_2, tex_name_1, tex_name_2):
 
             uvmap_node = nodes.new(type="ShaderNodeUVMap")
             uvmap_node.location = x - 700, y - 390
-            uvmap_node.uv_map = "UVMap.001"  # second UV map for second texture
+            uvmap_node.uv_map = "Float2.001"  # second UV map for second texture
             links.new(uvmap_node.outputs[0], tex2_node.inputs["Vector"])
 
             links.new(mix_node.outputs[0], principled_node.inputs["Base Color"])
